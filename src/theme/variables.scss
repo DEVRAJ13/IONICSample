@@ -38,7 +38,8 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  custom-color: #F57F17
 );
 
 
@@ -53,7 +54,8 @@ $colors: (
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
+$toolbar-background:	color($colors, custom-color);
+$toolbar-text-color: color($colors, dark);
 
 
 // App Windows Variables

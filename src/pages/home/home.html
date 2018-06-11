@@ -1,18 +1,501 @@
-<ion-header>
+<ion-header [ngClass]="{'hide-header':showheader,'show-header':hideheader}">
+
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Home</ion-title>
+
+
+
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+
+
+
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)='onDismiss()'>
+        <ion-icon name="mic"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+
+<ion-content style="background-color: #eae6e6;">
+  <ion-item class="custom-item">
+    <ion-scroll scrollX="true" class="scroll_class_list">
+      <ion-icon class="myspace">
+        <ion-row class="small-ti">
+          <ion-col col-3>
+            <img class="dot" src="./assets/imgs/video-player.png" />
+          </ion-col>
+          <ion-col col-9 style="padding: 8px; color:#fff;">
+            Movies
+          </ion-col>
+        </ion-row>
+      </ion-icon>
+
+      <ion-icon class="myspace">
+        <ion-row class="small-ti">
+          <ion-col col-3>
+            <img class="dot" src="./assets/imgs/headphones.png" />
+          </ion-col>
+          <ion-col col-9 style="padding: 8px; color:#fff;">
+            Music
+          </ion-col>
+        </ion-row>
+      </ion-icon>
+
+      <ion-icon class="myspace">
+        <ion-row class="small-ti">
+          <ion-col col-3>
+            <img class="dot" src="./assets/imgs/casino.png" />
+          </ion-col>
+          <ion-col col-9 style="padding: 8px; color:#fff;">
+            Games
+          </ion-col>
+        </ion-row>
+      </ion-icon>
+    </ion-scroll>
+  </ion-item>
+
+
+  <ion-item class="custom-item">
+    <ion-scroll scrollX="true" class="scroll_class_list_two">
+      <ion-icon text-wrap>
+        <ion-card style="margin-top: -1px;" text-wrap>
+          <ion-row>
+            <ion-col col-5 class="custom-col">
+              <img class="img-size" src="http://198.15.68.162/35poD/music/english/artist/s/selena_gomez/stars_dance/img.jpg" />
+            </ion-col>
+
+            <ion-col col-7 padding>
+              <ion-icon name="more" class="more" style="float: right;"></ion-icon>
+              <ion-row>
+                <ion-col class="custom-padding">
+                  <h3>Marvel's Agents of S.H.I.E.L.D.</h3>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col class="custom-padding top">
+                  <p class="txt-one">Text inside h3 tag</p>
+                </ion-col>
+              </ion-row>
+
+              <ion-row class="row-top">
+                <ion-col col-6 class="custom-padding">
+                  <p class="txt-two">01:08:50 h</p>
+                </ion-col>
+
+                <ion-col col-6 class="custom-padding ">
+                  <p class="txt-two">720p</p>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col col-6 class="custom-padding">
+                  <p class="txt-t">Audio</p>
+                </ion-col>
+                <ion-col col-6 class="custom-padding">
+                  <p class="txt-t">untitle</p>
+                </ion-col>
+
+
+                <ion-col col-6 class="custom-padding">
+                  <p>Stereo</p>
+                </ion-col>
+                <ion-col col-6 class="custom-padding">
+                  <p>English</p>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-icon>
+
+
+
+      <ion-icon text-wrap>
+        <ion-card style="margin-top: -1px;" text-wrap>
+          <ion-row>
+            <ion-col col-5 class="custom-col">
+              <img class="img-size" src="https://www.hollywoodreporter.com/sites/default/files/imagecache/blog_post_349_width/2012/10/comso_taylor_swift_december_cover.jpg"
+              />
+            </ion-col>
+
+            <ion-col col-7 padding>
+              <ion-icon name="more" class="more" style="float: right;"></ion-icon>
+              <ion-row>
+                <ion-col class="custom-padding">
+                  <h3>Marvel's Agents of S.H.I.E.L.D.</h3>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col class="custom-padding top">
+                  <p class="txt-one">Text inside h3 tag</p>
+                </ion-col>
+              </ion-row>
+
+              <ion-row class="row-top">
+                <ion-col col-6 class="custom-padding">
+                  <p class="txt-two">01:08:50 h</p>
+                </ion-col>
+
+                <ion-col col-6 class="custom-padding ">
+                  <p class="txt-two">720p</p>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col col-6 class="custom-padding">
+                  <p class="txt-t">Audio</p>
+                </ion-col>
+                <ion-col col-6 class="custom-padding">
+                  <p class="txt-t">untitle</p>
+                </ion-col>
+
+
+                <ion-col col-6 class="custom-padding">
+                  <p>Stereo</p>
+                </ion-col>
+                <ion-col col-6 class="custom-padding">
+                  <p>English</p>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-icon>
+
+
+
+
+
+      <ion-icon text-wrap>
+        <ion-card style="margin-top: -1px;" text-wrap>
+          <ion-row>
+            <ion-col col-5 class="custom-col">
+              <img class="img-size" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYgyqx_LoSl74XVE9HMvhrCi8OFPv5eeaM20X8mYRJUFI3-7w6ow"
+              />
+            </ion-col>
+
+            <ion-col col-7 padding>
+              <ion-icon name="more" class="more" style="float: right;"></ion-icon>
+              <ion-row>
+                <ion-col class="custom-padding">
+                  <h3>Marvel's Agents of S.H.I.E.L.D.</h3>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col class="custom-padding top">
+                  <p class="txt-one">Text inside h3 tag</p>
+                </ion-col>
+              </ion-row>
+
+              <ion-row class="row-top">
+                <ion-col col-6 class="custom-padding">
+                  <p class="txt-two">01:08:50 h</p>
+                </ion-col>
+
+                <ion-col col-6 class="custom-padding ">
+                  <p class="txt-two">720p</p>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col col-6 class="custom-padding">
+                  <p class="txt-t">Audio</p>
+                </ion-col>
+                <ion-col col-6 class="custom-padding">
+                  <p class="txt-t">untitle</p>
+                </ion-col>
+
+
+                <ion-col col-6 class="custom-padding">
+                  <p>Stereo</p>
+                </ion-col>
+                <ion-col col-6 class="custom-padding">
+                  <p>English</p>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-icon>
+    </ion-scroll>
+  </ion-item>
+
+
+  <ion-list>
+    <ion-list-header style="margin-bottom: 1px;">
+      Most Popular Songs
+    </ion-list-header>
+
+    <ion-row class="row-color">
+      <ion-col class="custom-padding" col-8>
+        <ion-row>
+          <p class="txt-custom-two">Lit-erally, the 5 Best Apps for Book Lovers sample txt.</p>
+        </ion-row>
+        <ion-row class="padding-o">
+          <ion-col col-3>
+            <img class="choose" src="https://images-na.ssl-images-amazon.com/images/I/51TimvbGakL.jpg" />
+          </ion-col>
+
+          <ion-col col-3>
+            <img class="choose" src="https://c.saavncdn.com/329/Despacito-English-2015-500x500.jpg" />
+          </ion-col>
+
+          <ion-col col-3>
+            <img class="choose" src="https://c.saavncdn.com/559/Meant-To-Be-English-2017-20170728052347-500x500.jpg" />
+          </ion-col>
+
+          <ion-col col-3>
+            <img class="choose" src="https://c.saavncdn.com/573/So-Long-English-2017-500x500.jpg" />
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col class="custom-padding" col-4>
+        <img class="ad-img" src="https://cdn1.thr.com/sites/default/files/imagecache/landscape_928x523/2017/08/instagram_-_taylor_swift_reputation_-_screenshot_-_h_2017.jpg"
+        />
+      </ion-col>
+    </ion-row>
+
+
+
+    <ion-row class="row-color" style="margin-top: 1px;">
+      <ion-col class="custom-padding" col-8>
+        <ion-row>
+          <p class="txt-custom-two">Lit-erally, the 5 Best Apps for Book Lovers sample txt.</p>
+        </ion-row>
+        <ion-row class="padding-o">
+          <ion-col col-3>
+            <img class="choose" src="http://www.hdfinewallpapers.com/HDWallpapers/Big/Taylor-Swift/Latest_English_Song_Album_Blank_Space_Taylor_Swift_in_Goggles_HD_Photo.jpg"
+            />
+          </ion-col>
+
+          <ion-col col-3>
+            <img class="choose" src="https://cps-static.rovicorp.com/3/JPG_500/MI0001/441/MI0001441867.jpg?partner=allrovi.com" />
+          </ion-col>
+
+          <ion-col col-3>
+            <img class="choose" src="https://allentertainmentsforu.files.wordpress.com/2014/12/englishmp3sognsz-blogspot-com.jpg?w=350&h=200&crop=1"
+            />
+          </ion-col>
+
+          <ion-col col-3>
+            <img class="choose" src="http://4.bp.blogspot.com/-efPYb5RsYVc/UsAnBZOZXYI/AAAAAAAAA9U/gt_CYsE_d0I/w1200-h630-p-k-no-nu/Britney%20Jean%20-%20Britney%20Spears%20(2013)%20English%20Full%20Album%20Mp3%20Songs%20Free%20Download.png"
+            />
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col class="custom-padding" col-4>
+        <img class="ad-img" src="https://i.pinimg.com/originals/d7/0f/e2/d70fe2bc283e72e28e3b026402098ef5.jpg" />
+      </ion-col>
+    </ion-row>
+  </ion-list>
+
+
+
+  <ion-row>
+    <ion-col col-6>
+
+      <ion-card>
+        <img src="http://4.bp.blogspot.com/-efPYb5RsYVc/UsAnBZOZXYI/AAAAAAAAA9U/gt_CYsE_d0I/w1200-h630-p-k-no-nu/Britney%20Jean%20-%20Britney%20Spears%20(2013)%20English%20Full%20Album%20Mp3%20Songs%20Free%20Download.png"
+        />
+        <ion-card-content>
+          <p>
+            The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
+          </p>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-col>
+
+    <ion-col col-6>
+
+      <ion-card>
+        <img src="https://i.ytimg.com/vi/oLqNxdgEgpQ/maxresdefault.jpg" />
+        <ion-card-content>
+          <p>
+            The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+
+
+
+  <ion-card style="margin-top: -1px;">
+    <ion-row>
+      <ion-col col-5 class="custom-col">
+        <img class="img-size" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNY-cRZpraBD1-MzlSKLadqlNOQXzeKdpCjrzpMlBCEuDNBcAL3g"
+        />
+      </ion-col>
+
+      <ion-col col-7 padding>
+        <ion-icon name="more" class="more" style="float: right;"></ion-icon>
+        <ion-row>
+          <ion-col class="custom-padding">
+            <h3>Marvel's Agents of S.H.I.E.L.D.</h3>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="custom-padding top">
+            <p class="txt-one">Text inside h3 tag</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="row-top">
+          <ion-col col-6 class="custom-padding">
+            <p class="txt-two">01:08:50 h</p>
+          </ion-col>
+
+          <ion-col col-6 class="custom-padding ">
+            <p class="txt-two">720p</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-6 class="custom-padding">
+            <p class="txt-t">Audio</p>
+          </ion-col>
+          <ion-col col-6 class="custom-padding">
+            <p class="txt-t">untitle</p>
+          </ion-col>
+
+
+          <ion-col col-6 class="custom-padding">
+            <p>Stereo</p>
+          </ion-col>
+          <ion-col col-6 class="custom-padding">
+            <p>English</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+
+
+
+  <ion-card style="margin-top: -1px;">
+    <ion-row>
+      <ion-col col-5 class="custom-col">
+        <img class="img-size" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQllCYoc0Ceg9Q9IiOHc6HWLzKNsdwyXAgMqe_W6ez9Y2o-OzRO-w"
+        />
+      </ion-col>
+
+      <ion-col col-7 padding>
+        <ion-icon name="more" class="more" style="float: right;"></ion-icon>
+        <ion-row>
+          <ion-col class="custom-padding">
+            <h3>Marvel's Agents of S.H.I.E.L.D.</h3>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="custom-padding top">
+            <p class="txt-one">Text sample place for test</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="row-top">
+          <ion-col col-6 class="custom-padding">
+            <p class="txt-two">01:08:50 h</p>
+          </ion-col>
+
+          <ion-col col-6 class="custom-padding ">
+            <p class="txt-two">720p</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-6 class="custom-padding">
+            <p class="txt-t">Audio</p>
+          </ion-col>
+          <ion-col col-6 class="custom-padding">
+            <p class="txt-t">untitle</p>
+          </ion-col>
+
+
+          <ion-col col-6 class="custom-padding">
+            <p>Stereo</p>
+          </ion-col>
+          <ion-col col-6 class="custom-padding">
+            <p>English</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+
+
+  <ion-card style="margin-top: -1px;">
+    <ion-row>
+      <ion-col col-5 class="custom-col">
+        <img class="img-size" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZaIQUaOeKexlrXOuZWhcoxSwOkhADPxQsJyNdG6ht2maQ4oix"
+        />
+      </ion-col>
+
+      <ion-col col-7 padding>
+        <ion-icon name="more" class="more" style="float: right;"></ion-icon>
+        <ion-row>
+          <ion-col class="custom-padding">
+            <h3>Marvel's Agents of S.H.I.E.L.D.</h3>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="custom-padding top">
+            <p class="txt-one">Text inside h3 tag</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="row-top">
+          <ion-col col-6 class="custom-padding">
+            <p class="txt-two">01:08:50 h</p>
+          </ion-col>
+
+          <ion-col col-6 class="custom-padding ">
+            <p class="txt-two">720p</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-6 class="custom-padding">
+            <p class="txt-t">Audio</p>
+          </ion-col>
+          <ion-col col-6 class="custom-padding">
+            <p class="txt-t">untitle</p>
+          </ion-col>
+
+
+          <ion-col col-6 class="custom-padding">
+            <p>Stereo</p>
+          </ion-col>
+          <ion-col col-6 class="custom-padding">
+            <p>English</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
 </ion-content>
